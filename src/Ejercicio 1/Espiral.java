@@ -51,19 +51,17 @@ public class Espiral {
         int totalCeldas = tamanio * tamanio;
         int celdasVisitadas = 0;
 
-        // Se revisa primero el centro
         if (matriz[fila][columna] != valorEsperado) {
             return false;
         }
         celdasVisitadas++;
         valorEsperado--;
 
-        int pasos = 1;          // longitud del próximo tramo recto
-        int indiceDireccion = 0; // apunta a ORDEN_GIRO
+        int pasos = 1;
+        int indiceDireccion = 0;
 
         while (celdasVisitadas < totalCeldas) {
-            // cada longitud de "pasos" se usa dos veces antes de crecer,
-            // igual que en una espiral cuadrada clásica (1,1,2,2,3,3,...)
+
             for (int vez = 0; vez < 2 && celdasVisitadas < totalCeldas; vez++) {
                 Direccion direccion = ORDEN_GIRO[indiceDireccion];
 
